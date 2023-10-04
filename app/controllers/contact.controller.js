@@ -3,7 +3,7 @@ const ContactService = require('../services/contact.service');
 const MongoDB = require('../utils/mongodb.util');
 
 exports.create = async (req, res, next) => {
-  if (!req.body.name) {
+  if (!req.body?.name) {
     return next(new ApiError(400, 'Name cannot be empty!'));
   }
 
